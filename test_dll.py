@@ -1,4 +1,4 @@
-import ctypes, os.path
+import ctypes, os.path, platform
 import unittest
 
 
@@ -28,7 +28,10 @@ class SimpleMath(DLL):
 
 class TestMath(unittest.TestCase):
     def setUp(self):
-        self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'x64', 'Debug', 'TestDLL.dll'))
+        if platform.architecture()[0] == '64bit':
+            self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'x64', 'Debug', 'TestDLL.dll'))
+        else:
+            self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'Debug', 'TestDLL.dll'))
 
     def testSub(self):
         a, b = 90, 5
