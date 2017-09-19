@@ -28,7 +28,7 @@ class SimpleMath(DLL):
 
 class TestMath(unittest.TestCase):
     def setUp(self):
-        try：
+        try:
             self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'x64', 'Debug', 'TestDLL.dll'))
         except:
             self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'Debug', 'TestDLL.dll'))
