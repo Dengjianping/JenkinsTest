@@ -28,7 +28,7 @@ class SimpleMath(DLL):
 
 class TestMath(unittest.TestCase):
     def setUp(self):
-        self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'Debug', 'TestDLL.dll'))
+        self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'x64', 'Debug', 'TestDLL.dll'))
 
     def testSub(self):
         a, b = 90, 5
