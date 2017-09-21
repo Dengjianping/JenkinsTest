@@ -1,4 +1,4 @@
-#include "simplemath.h"
+#include "..\include\simplemath.h"
 
 int add(int *x, int *y)
 {

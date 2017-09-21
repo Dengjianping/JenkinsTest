@@ -28,10 +28,9 @@ class SimpleMath(DLL):
 
 class TestMath(unittest.TestCase):
     def setUp(self):
-        try:
-            self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'x64', 'Debug', 'TestDLL.dll'))
-        except:
-            self.test_dll = SimpleMath(os.path.join(os.path.dirname(__file__), 'Debug', 'TestDLL.dll'))
+        test_py_dir = os.path.dirname(__file__)
+        dll_path = os.path.join(os.path.dirname(test_py_dir), 'build', 'Debug', 'simplemath.dll')
+        self.test_dll = SimpleMath(dll_path)
 
     def testSub(self):
         a, b = 90, 5
