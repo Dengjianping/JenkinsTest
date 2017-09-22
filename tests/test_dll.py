@@ -28,7 +28,7 @@ class SimpleMath(DLL):
 
 class TestMath(unittest.TestCase):
     def setUp(self):
-        test_py_dir = os.path.dirname(__file__)
+        test_py_dir = os.path.dirname(os.path.realpath(__file__))
         dll_path = os.path.join(os.path.dirname(test_py_dir), 'build', 'Debug', 'simplemath.dll')
         self.test_dll = SimpleMath(dll_path)
 
